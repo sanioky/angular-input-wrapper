@@ -1,5 +1,9 @@
 <form [formGroup]="userForm">
-    <ax-control title="Title">
-        <input formControlName="userName" type="text" placeholder="Placeholder text" required>
+    <ax-control title="User Name">
+        <input #input formControlName="userName" type="text" placeholder="Name" required>
+
+        <validation when="required">This field is required</validation>
+        <validation when="minlength">Should be at least 3 characters</validation>
+        <validation when="pattern">Should match pattern</validation>
     </ax-control>
 </form>

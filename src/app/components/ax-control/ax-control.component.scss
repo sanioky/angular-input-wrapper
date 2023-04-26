@@ -1,0 +1,27 @@
+label {
+    display: block;
+    margin: 0 0 10px;
+}
+
+::ng-deep {
+    input {
+        height: 30px;
+        width: 100%;
+        padding: 5px;
+        border: 2px solid #110b21;
+        border-radius: 5px;
+    }
+
+    input:hover {
+        background: #f1eeee;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #57C4E5;
+    }
+
+    input.ng-invalid.ng-dirty {
+        border-color: #ba2222;
+    }
+}

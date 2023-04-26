@@ -8,12 +8,14 @@ import { AxControlComponent } from './components/ax-control/ax-control.component
 import {
     FormsModule, ReactiveFormsModule
 } from '@angular/forms';
+import { ValidationComponent } from './components/validation/validation.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         FormComponent,
-        AxControlComponent
+        AxControlComponent,
+        ValidationComponent
     ],
     imports: [
         BrowserModule,

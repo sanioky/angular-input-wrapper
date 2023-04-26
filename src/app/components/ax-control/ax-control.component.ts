@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, ContentChild, Input } from '@angular/core';
+import { FormControl, FormControlName } from '@angular/forms';
 
 @Component({
     selector: 'ax-control',
@@ -7,4 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class AxControlComponent {
     @Input() title = '';
+
+    public formControl!: FormControl;
+
+    @ContentChild(FormControlName) control!: FormControlName;
+
+    ngAfterContentInit() {
+        this.formControl = this.control.control;
+    }
 }

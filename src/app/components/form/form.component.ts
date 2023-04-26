@@ -15,7 +15,9 @@ export class FormComponent implements OnInit {
     ngOnInit(): void {
         this.userName = this.fb.control('', {
             validators: [
-                Validators.required
+                Validators.required,
+                Validators.minLength(3),
+                Validators.pattern('[A-Za-z]*')
             ]
         });
 
