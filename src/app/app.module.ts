@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { AxControlComponent } from './components/ax-control/ax-control.component';
+import {
+    FormsModule, ReactiveFormsModule
+} from '@angular/forms';
+import { ValidationComponent } from './components/validation/validation.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         FormComponent,
-        AxControlComponent
+        AxControlComponent,
+        ValidationComponent
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
