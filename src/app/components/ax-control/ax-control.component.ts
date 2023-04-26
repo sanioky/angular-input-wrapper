@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'ax-control',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./ax-control.component.scss']
 })
 export class AxControlComponent {
-
+    @Input() title = '';
 }

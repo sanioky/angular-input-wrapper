@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { AxControlComponent } from './components/ax-control/ax-control.component';
+import {
+    FormsModule, ReactiveFormsModule
+} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -14,7 +17,9 @@ import { AxControlComponent } from './components/ax-control/ax-control.component
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

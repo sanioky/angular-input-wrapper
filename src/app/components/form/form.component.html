@@ -1,1 +1,5 @@
-<ax-control></ax-control>
+<form [formGroup]="userForm">
+    <ax-control title="Title">
+        <input formControlName="userName" type="text" placeholder="Placeholder text" required>
+    </ax-control>
+</form>
