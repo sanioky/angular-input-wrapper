@@ -2,3 +2,39 @@ h1 {
     text-align: center;
     margin: 10px 0 20px;
 }
+
+#main {
+    width: 480px;
+    margin: 0 auto;
+}
+
+nav {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 5px 40px;
+    background: #212738;
+    color: #FFF;
+    border-radius: 10px;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            margin: 0 50px;
+        }
+
+        a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e4eef3;
+        }
+
+        a.selected {
+            color: #805996;
+        }
+    }
+}

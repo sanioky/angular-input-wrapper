@@ -1,6 +1,11 @@
+.form-control {
+    min-height: 110px;
+}
+
 label {
     display: block;
-    margin: 0 0 10px;
+    margin: 0 0 5px;
+    font-size: 12px;
 }
 
 ::ng-deep {
@@ -10,10 +15,11 @@ label {
         padding: 5px;
         border: 2px solid #110b21;
         border-radius: 5px;
+        margin: 0 0 5px;
     }
 
     input:hover {
-        background: #f1eeee;
+        background: #e4eef3;
     }
 
     input:focus {
@@ -23,5 +29,9 @@ label {
 
     input.ng-invalid.ng-dirty {
         border-color: #ba2222;
+    }
+
+    input:disabled {
+        background: #a2abb0;
     }
 }
