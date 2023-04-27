@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormReactiveComponent implements OnInit {
     userForm!: FormGroup;
     userName!: FormControl;
+    userBirthDate!: FormControl;
 
     constructor(private fb: FormBuilder) { }
 
@@ -21,10 +22,27 @@ export class FormComponent implements OnInit {
             ]
         });
 
+        this.userBirthDate = this.fb.control('', {
+            validators: [
+                Validators.required,
+                createAgeValidator()
+            ]
+        });
+
         this.userForm = this.fb.group({
-            userName: this.userName
+            userName: this.userName,
+            userBirthDate: this.userBirthDate
         }, {
             updateOn: 'blur'
         });
+    }
+}
+
+function createAgeValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+        const birthDatePlus18 = new Date(control.value);
+        birthDatePlus18.setFullYear(birthDatePlus18.getFullYear() + 18);
+
+        return birthDatePlus18 < new Date() ? null : { tooYoung: true };
     }
 }

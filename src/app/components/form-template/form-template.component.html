@@ -1,0 +1,17 @@
+<form #form="ngForm" [ngFormOptions]="{ updateOn: 'blur' }">
+    <ax-control title="User Name:">
+        <input name="userName" type="text" placeholder="Name" [(ngModel)]="user.name" #userName="ngModel" required
+            minlength="3" pattern="[A-Za-z]*">
+
+        <validation when="required">This field is required</validation>
+        <validation when="minlength">Should be at least 3 characters</validation>
+        <validation when="pattern">Should match pattern</validation>
+    </ax-control>
+
+    <ax-control title="Password:">
+        <input name="userPassword" type="password" placeholder="Password" [(ngModel)]="user.password"
+            #userPassword="ngModel" required disabled>
+
+        <validation when="required">This field is required</validation>
+    </ax-control>
+</form>

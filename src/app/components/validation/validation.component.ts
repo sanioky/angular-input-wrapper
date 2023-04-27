@@ -17,8 +17,9 @@ export class ValidationComponent {
     ngAfterViewInit() {
         const control: FormControl = this.parent.formControl;
 
-        control.valueChanges.subscribe(() => {
-            this.showError = control.invalid && !!control.errors?.hasOwnProperty(this.when);
+        control?.valueChanges.subscribe(() => {
+            this.showError = control.invalid && control.dirty
+                && !!control.errors?.hasOwnProperty(this.when);
         });
     }
 }
