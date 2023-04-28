@@ -8,14 +8,14 @@ import { FormControl, FormControlName, NgModel } from '@angular/forms';
 })
 export class AxControlComponent {
     @Input() title = '';
+    @ContentChild(FormControlName) controlReactive!: FormControlName;
+    @ContentChild(NgModel) controlTemplate!: NgModel;
 
     public formControl!: FormControl;
 
-    @ContentChild(FormControlName) control!: FormControlName;
-
-    @ContentChild(NgModel) controlTemplate!: NgModel;
-
     ngAfterContentInit() {
-        this.formControl = this.control ? this.control.control : this.controlTemplate.control;
+        if (this.controlReactive || this.controlTemplate) {
+            this.formControl = this.controlReactive ? this.controlReactive.control : this.controlTemplate.control;
+        }
     }
 }
