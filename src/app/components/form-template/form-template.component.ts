@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class FormTemplateComponent {
     user = {
         name: '',
-        password: '12345'
+        password: '',
+        inputDisabled: 'Test Disabled input'
     }
 }

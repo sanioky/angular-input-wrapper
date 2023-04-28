@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormTemplateComponent } from './form-template.component';
+import { FormsModule } from '@angular/forms';
+import { AxControlComponent } from '../ax-control/ax-control.component';
+import { ValidationComponent } from '../validation/validation.component';
 
 describe('FormTemplateComponent', () => {
     let component: FormTemplateComponent;
@@ -8,7 +11,14 @@ describe('FormTemplateComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FormTemplateComponent]
+            imports: [
+                FormsModule
+            ],
+            declarations: [
+                FormTemplateComponent,
+                AxControlComponent,
+                ValidationComponent
+            ]
         })
             .compileComponents();
 
